@@ -6,14 +6,17 @@ on:
       - main
       - develop
 
+env:
+  NOMBRE: "Carlos Yon"
+
 jobs:
   saludo:
     runs-on: ubuntu-latest
     steps:
       - name: Saludo desde main
         if: github.ref == 'refs/heads/main'
-        run: echo "hola desde main, soy Carlos Yon"
+        run: echo "Hola desde main, soy $NOMBRE"
 
       - name: Saludo desde develop
         if: github.ref == 'refs/heads/develop'
-        run: echo "hola desde develop, soy Carlos Yon"
+        run: echo "Hola desde develop, soy $NOMBRE"
